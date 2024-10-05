@@ -1,9 +1,10 @@
-from flask import Flask
-
-app = Flask(__name__)
-
-@app.route("/")
-def hello_world():
-    return "<p>Hello, World!</p>"
+from kivymd.app import MDApp
+from kivymd.uix.label import MDLabel
 
 
+class MainApp(MDApp):
+    def build(self):
+        return MDLabel(text="Hello, World", halign="center")
+
+
+MainApp().run()
